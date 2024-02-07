@@ -248,7 +248,6 @@ RSpec.feature 'Multi Two Factor Authentication', allowed_extra_analytics: [:*] d
 
     it 'shows the confirm backup codes page' do
       click_continue
-
       expect(page).to have_current_path(
         confirm_backup_codes_path,
       )
