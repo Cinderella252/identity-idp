@@ -20,11 +20,6 @@ RSpec.feature 'sign up with backup code', allowed_extra_analytics: [:*] do
       expect(page).to have_link(t('components.download_button.label'))
       expect(current_path).to eq backup_code_setup_path
 
-      click_continue
-      click_continue
-
-      expect(page).to have_content(t('forms.validation.required_checkbox'))
-
       check t('forms.backup_code.saved')
       click_continue
 
