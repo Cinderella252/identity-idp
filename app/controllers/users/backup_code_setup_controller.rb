@@ -30,6 +30,7 @@ module Users
 
       save_backup_codes
       track_backup_codes_created
+      analytics.multi_factor_auth_setup(**analytics_properties)
     end
 
     def edit
@@ -38,7 +39,6 @@ module Users
 
     def continue
       flash[:success] = t('notices.backup_codes_configured')
-      analytics.multi_factor_auth_setup(**analytics_properties)
       redirect_to next_setup_path || after_mfa_setup_path
     end
 
