@@ -24,8 +24,26 @@ RSpec.describe Users::BackupCodeSetupController, allowed_extra_analytics: [:*] d
     Funnel::Registration::AddMfa.call(user.id, 'phone', analytics)
     expect(PushNotification::HttpPush).to receive(:deliver).
       with(PushNotification::RecoveryInformationChangedEvent.new(user: user))
+
     expect(@analytics).to receive(:track_event).
-      with('User marked authenticated', { authentication_type: :valid_2fa_confirmation })
+      with('Multi-Factor Authentication Setup', {
+        enabled_mfa_methods_count: 2,
+        errors: nil,
+        in_account_creation_flow: false,
+        multi_factor_auth_method: 'backup_codes',
+        success: true
+      })
+    expect(@analytics).to receive(:track_event).
+      with('Backup Code Created', {
+        enabled_mfa_methods_count: 2,
+        in_account_creation_flow: false,
+      })
+    expect(@irs_attempts_api_tracker).to receive(:track_event).
+      with(:mfa_enroll_backup_code, success: true)
+
+    expect(@analytics).to receive(:track_event).
+      with('User marked authenticated', {:authentication_type=>:valid_2fa_confirmation})
+
     expect(@analytics).to receive(:track_event).
       with('Backup Code Setup Visited', {
         success: true,
