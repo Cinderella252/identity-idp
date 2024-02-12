@@ -31,7 +31,7 @@ RSpec.describe Users::BackupCodeSetupController, allowed_extra_analytics: [:*] d
         errors: nil,
         in_account_creation_flow: false,
         multi_factor_auth_method: 'backup_codes',
-        success: true
+        success: true,
       })
     expect(@analytics).to receive(:track_event).
       with('Backup Code Created', {
@@ -42,7 +42,7 @@ RSpec.describe Users::BackupCodeSetupController, allowed_extra_analytics: [:*] d
       with(:mfa_enroll_backup_code, success: true)
 
     expect(@analytics).to receive(:track_event).
-      with('User marked authenticated', {:authentication_type=>:valid_2fa_confirmation})
+      with('User marked authenticated', { authentication_type: :valid_2fa_confirmation })
 
     expect(@analytics).to receive(:track_event).
       with('Backup Code Setup Visited', {
