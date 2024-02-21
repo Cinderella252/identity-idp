@@ -24,10 +24,18 @@ RSpec.feature 'sign up with backup code', allowed_extra_analytics: [:*] do
       click_continue
 
       expect(page).to have_content(t('notices.backup_codes_configured'))
+<<<<<<< HEAD
       expect(current_path).to eq confirm_backup_codes_path
       expect(user.backup_code_configurations.count).to eq(10)
 
       click_continue
+=======
+      expect(user.backup_code_configurations.count).to eq(10)
+
+      expect(current_path).to eq(confirm_backup_codes_path)
+
+      click_on t('forms.buttons.continue')
+>>>>>>> 2c5e94c42 (apply changes to spec)
 
       expect(fake_analytics).to have_logged_event('User registration: complete')
       expect(page).to have_title(t('titles.account'))
