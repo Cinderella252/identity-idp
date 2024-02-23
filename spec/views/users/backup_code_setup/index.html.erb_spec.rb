@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'users/backup_code_setup/index.html.erb' do
+<<<<<<< HEAD
+=======
+  include MfaSetupConcern
+  include Devise::Test::ControllerHelpers
+>>>>>>> 2269e4ce0 (change inline function to before action)
   let(:user) { build(:user, :fully_registered) }
 
   before do
