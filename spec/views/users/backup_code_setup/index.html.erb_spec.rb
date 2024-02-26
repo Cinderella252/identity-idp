@@ -1,20 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'users/backup_code_setup/index.html.erb' do
-<<<<<<< HEAD
-=======
   include MfaSetupConcern
   include Devise::Test::ControllerHelpers
->>>>>>> 2269e4ce0 (change inline function to before action)
   let(:user) { build(:user, :fully_registered) }
 
   before do
     allow(view).to receive(:current_user).and_return(user)
-<<<<<<< HEAD
     allow(view).to receive(:in_multi_mfa_selection_flow?).and_return(false)
-=======
-    allow(view).to receive(:in_account_creation_flow?).and_return(false)
->>>>>>> 9e1958b27 (fix index spec)
     @codes = BackupCodeGenerator.new(user).create
   end
 
@@ -86,7 +79,7 @@ RSpec.describe 'users/backup_code_setup/index.html.erb' do
       render
 
       expect(rendered).to have_button t(
-        'links.cancel'
+        'links.cancel',
       )
     end
   end
