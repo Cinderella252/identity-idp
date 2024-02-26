@@ -10,7 +10,11 @@ RSpec.describe 'users/backup_code_setup/index.html.erb' do
 
   before do
     allow(view).to receive(:current_user).and_return(user)
+<<<<<<< HEAD
     allow(view).to receive(:in_multi_mfa_selection_flow?).and_return(false)
+=======
+    allow(view).to receive(:in_account_creation_flow?).and_return(false)
+>>>>>>> 9e1958b27 (fix index spec)
     @codes = BackupCodeGenerator.new(user).create
   end
 
@@ -75,6 +79,14 @@ RSpec.describe 'users/backup_code_setup/index.html.erb' do
 
       expect(rendered).to have_button t(
         'two_factor_authentication.choose_another_option',
+      )
+    end
+
+    it 'shows a link to cancel account creation' do
+      render
+
+      expect(rendered).to have_button t(
+        'links.cancel'
       )
     end
   end
