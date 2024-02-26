@@ -259,6 +259,14 @@ RSpec.feature 'Multi Two Factor Authentication', allowed_extra_analytics: [:*] d
       expect(current_path).to eq authentication_methods_setup_path
       expect(mfa.backup_code_configurations).to be_empty
     end
+
+    it 'returns to setup mfa page when user clicks Cancel' do
+      click_on (t('links.cancel'))
+      expect(current_path).to eq authentication_methods_setup_path
+      expect(mfa.backup_code_configurations).to be_empty
+    end
+
+
   end
 
   describe 'adding a phone as a second mfa' do

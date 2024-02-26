@@ -79,7 +79,7 @@ RSpec.describe 'users/backup_code_setup/index.html.erb' do
       render
 
       expect(rendered).to have_button t(
-        'links.cancel',
+        'links.cancel'
       )
     end
   end
