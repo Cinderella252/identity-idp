@@ -26,7 +26,6 @@ RSpec.describe Users::BackupCodeSetupController, allowed_extra_analytics: [:*] d
       with(PushNotification::RecoveryInformationChangedEvent.new(user: user))
     expect(@analytics).to receive(:track_event).
       with('User marked authenticated', { authentication_type: :valid_2fa_confirmation })
-
     expect(@analytics).to receive(:track_event).
       with('Backup Code Setup Visited', {
         success: true,
