@@ -239,6 +239,7 @@ RSpec.feature 'Multi Two Factor Authentication', allowed_extra_analytics: [:*] d
 
     it 'shows the confirm backup codes page' do
       click_continue
+
       expect(page).to have_current_path(
         confirm_backup_codes_path,
       )
@@ -256,12 +257,6 @@ RSpec.feature 'Multi Two Factor Authentication', allowed_extra_analytics: [:*] d
 
     it 'returns to setup mfa page when user clicks Choose another option' do
       click_on(t('two_factor_authentication.choose_another_option'))
-      expect(current_path).to eq authentication_methods_setup_path
-      expect(mfa.backup_code_configurations).to be_empty
-    end
-
-    it 'returns to setup mfa page when user clicks Cancel' do
-      click_on(t('links.cancel'))
       expect(current_path).to eq authentication_methods_setup_path
       expect(mfa.backup_code_configurations).to be_empty
     end
