@@ -562,8 +562,8 @@ module Features
       select_2fa_option('backup_code')
 
       expect(page).to have_current_path backup_code_setup_path
-      check t('forms.backup_code.saved')
 
+      check t('forms.backup_code.saved')
       click_button 'Continue'
     end
 
