@@ -214,7 +214,7 @@ fr:
         title: N’avez-vous pas reçu votre lettre?
       form:
         otp_label: Code de vérification
-        submit: Confirmer le compte
+        submit: Valider
         title: Confirmez votre compte
       intro: Bienvenue à nouveau. Saisissez le code à 10 caractères contenu dans le
         courrier que vous avez reçu.

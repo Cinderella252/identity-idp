@@ -196,7 +196,7 @@ en:
         title: Didn’t get your letter?
       form:
         otp_label: Verification code
-        submit: Confirm account
+        submit: Submit
         title: Confirm your account
       intro: Welcome back. Enter the 10-character code from the letter you received.
       last_letter_request_message_html: You last requested a letter on

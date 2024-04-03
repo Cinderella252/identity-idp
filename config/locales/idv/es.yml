@@ -206,7 +206,7 @@ es:
         title: ¿No recibió su carta?
       form:
         otp_label: Código de verificación
-        submit: Confirmar cuenta
+        submit: Enviar
         title: Confirme su cuenta
       intro: Bienvenido de nuevo. Introduzca el código de 10 caracteres de la carta
         que recibió.
