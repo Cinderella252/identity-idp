@@ -195,8 +195,11 @@ es:
         form:
           instructions: Si ya tiene su carta, introduzca el código de 10 caracteres de la
             carta que recibió.
-        intro_html: La última vez que solicitó una carta fue el <strong>%{date_letter_was_sent}</strong>.
-        request_a_new_letter_html: Solicite una nueva carta si han pasado más de <strong>10 días</strong> desde la última vez que la solicitó o si su código de verificación ha caducado.
+        intro_html: La última vez que solicitó una carta fue el
+          <strong>%{date_letter_was_sent}</strong>.
+        request_a_new_letter_html: Solicite una nueva carta si han pasado más de
+          <strong>10 días</strong> desde la última vez que la solicitó o si su
+          código de verificación ha caducado.
         title: ¿No recibió su carta?
       form:
         otp_label: Código de verificación

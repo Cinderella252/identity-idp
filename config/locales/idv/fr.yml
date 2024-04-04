@@ -200,9 +200,13 @@ fr:
         <strong>%{date_letter_was_sent}</strong>.
       did_not_receive_letter:
         form:
-          instructions: Si vous avez votre lettre, veuillez saisir le code à 10 caractères qu’elle contient.
-        intro_html: Vous avez demandé pour la dernière fois de recevoir un courrier le <strong>%{date_letter_was_sent}</strong>.
-        request_a_new_letter_html: Demandez à recevoir un nouveau courrier si plus de <strong>10 jours</strong> se sont écoulés depuis la dernière fois que vous en avez demandé un ou si votre code de vérification a expiré.
+          instructions: Si vous avez votre lettre, veuillez saisir le code à 10 caractères
+            qu’elle contient.
+        intro_html: Vous avez demandé pour la dernière fois de recevoir un courrier le
+          <strong>%{date_letter_was_sent}</strong>.
+        request_a_new_letter_html: Demandez à recevoir un nouveau courrier si plus de
+          <strong>10 jours</strong> se sont écoulés depuis la dernière fois que
+          vous en avez demandé un ou si votre code de vérification a expiré.
         title: Vous n’avez pas reçu votre lettre?
       form:
         otp_label: Code de vérification

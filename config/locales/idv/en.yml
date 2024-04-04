@@ -185,8 +185,11 @@ en:
         form:
           instructions: If you have your letter, enter the 10-character code from the
             letter you received.
-        intro_html: You last requested a letter on <strong>%{date_letter_was_sent}</strong>.
-        request_a_new_letter_html: Request a new letter if it’s been over <strong>10 days</strong> since you last requested a letter or if your verification code has expired.
+        intro_html: You last requested a letter on
+          <strong>%{date_letter_was_sent}</strong>.
+        request_a_new_letter_html: Request a new letter if it’s been over <strong>10
+          days</strong> since you last requested a letter or if your
+          verification code has expired.
         title: Didn’t get your letter?
       form:
         otp_label: Verification code
